@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/ahmet scene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Start Scene.unity
+    guid: a4e589ec07f5b404b8d2d085aeba346c
+  - enabled: 1
+    path: Assets/Scenes/Emre sahne.unity
+    guid: 221cfc4fc98798b47aa498fee0a74236
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6dedb1a4d41b5a24ab22111ffd24fa98
+  m_configObjects: {}
