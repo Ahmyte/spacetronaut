@@ -25,4 +25,8 @@ public class HealthSystem{
         if (health > healtMax) health = healtMax;
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }
+    public void SetMaxHealth(float health){
+        this.healtMax = health;
+        this.health = health;
+    }
 }

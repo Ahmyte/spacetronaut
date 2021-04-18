@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/ahmet scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Start Scene.unity
     guid: a4e589ec07f5b404b8d2d085aeba346c
@@ -17,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 6dedb1a4d41b5a24ab22111ffd24fa98
+  - enabled: 1
+    path: Assets/Scenes/KillScene.unity
+    guid: 24fdb0104aeedd24baf213579a6322d2
   m_configObjects: {}

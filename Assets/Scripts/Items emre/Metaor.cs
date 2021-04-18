@@ -38,7 +38,8 @@ public class Metaor : MonoBehaviour{
             {
                 audioData.Play();
             }
-            collision.gameObject.GetComponent<PlayerNeedSystems>().healthSystem.TakeDamage(damageAmount*speed/3*size);
+            Debug.Log(collision.relativeVelocity.magnitude +" "+ size);
+            collision.gameObject.GetComponent<PlayerNeedSystems>().healthSystem.TakeDamage(damageAmount + (collision.relativeVelocity.magnitude*2)+(size*4));
             GetComponent<CapsuleCollider2D>().enabled = false;
             Destroy(this.gameObject, audioData.clip.length);
         }

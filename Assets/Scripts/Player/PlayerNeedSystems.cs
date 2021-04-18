@@ -18,18 +18,19 @@ public class PlayerNeedSystems : MonoBehaviour{
     public float O2reduceSpeed = 0.008f;
     public float maxHp;
     private bool isOnce = false;
-    private GameObject OnDeath;
 
     void Start(){
         if (!Music.isPlaying){
             Music.Play();
         }
         o2System.GainOx(100);
-        OnDeath = GameObject.Find("Death Screen");
-        OnDeath.SetActive(false);
     }
 
     void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
         if( o2System.GetOxPercent() < 0.20f || hungerSystem.GetHungerPercent() < 0.20f || healthSystem.GetHealthPercent() < 0.20f){
             if (!audioData.isPlaying)
                 audioData.Play();
@@ -47,6 +48,10 @@ public class PlayerNeedSystems : MonoBehaviour{
             o2System.ReduceOx(O2reduceSpeed);
         } else o2System.ReduceOx(2*O2reduceSpeed);
         if (healthSystem.GetHealth()==0){
+            GetComponent<PlayerMove>().enabled = false;
+            GetComponentInChildren<SideRocketLeft>().enabled = false;
+            GetComponentInChildren<SideRocketRight>().enabled = false;
+            GetComponentInChildren<BackRocket>().enabled = false;
             Music.clip = Outro;
             Music.loop = false;
             if (audioData.isPlaying)
@@ -60,15 +65,11 @@ public class PlayerNeedSystems : MonoBehaviour{
                 isOnce = true;
             }
             StartCoroutine(Death());
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(0);
-            }
         }
     }
     IEnumerator Death()
     {
         yield return new WaitForSeconds(Outro.length);
-        OnDeath.SetActive(true);
+        SceneManager.LoadScene(3);
     }
 }

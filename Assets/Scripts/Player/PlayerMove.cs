@@ -31,10 +31,12 @@ public class PlayerMove : MonoBehaviour{
     }
 
     public void SetHard(){
-
+        playerNeedSystems.healthSystem.SetMaxHealth(50);
+        rotateSpeed = rotateSpeed / 2;
     }
     public void SetEasy(){
-        speed = speed * 2;
+        speed = speed + speed;
+        playerNeedSystems.healthSystem.SetMaxHealth(200);
         playerNeedSystems.O2reduceSpeed = 0.004f;
     }
     public void SetMedium(){

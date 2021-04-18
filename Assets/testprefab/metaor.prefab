@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boomanimate: {fileID: 7352030105142201594}
-  damageAmount: 10
+  damageAmount: 5
   size: 0
   audioData: {fileID: 6194960059252580943}
 --- !u!212 &5327235632268976727
